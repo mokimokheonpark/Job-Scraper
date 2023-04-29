@@ -2,13 +2,9 @@
 
 This is a Python project for scraping job postings from the We Work Remotely website based on a provided keyword, and saving the data to a CSV file.
 
-## Getting Started
-
-To use this project, you will need to have Python 3.x installed on your machine.
-
 ## Dependencies
 
-This project requires the following dependencies:
+This project requires the following Python libraries:
 
 - requests
 - BeautifulSoup
@@ -28,7 +24,8 @@ To use the scraper, follow the steps below:
 2. Simply run the "main.py" file using the following command: python main.py
 3. Enter the keyword you want to search for when prompted.
 
-Using your keyword, the scraper will search for job postings on the We Work Remotely website and save the data to a CSV file.
+The scraper will then search for job postings on the We Work Remotely website that match your keyword,  
+and save the data to a CSV file with the name "{keyword}_jobs_data.csv" in the project directory.
 
 ## Contributions
 
