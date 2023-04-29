@@ -2,7 +2,7 @@
 
 This is a Python project for scraping job postings from the We Work Remotely website based on a provided keyword, and saving the data to a CSV file.
 
-# Getting Started
+## Getting Started
 
 To use this project, you will need to have Python 3.x installed on your machine.
 
