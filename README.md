@@ -18,7 +18,7 @@ To get started with the project, follow the steps below:
 To use the scraper, follow the steps below:
 1. Navigate to the project directory using the terminal.
 2. Simply run the "main.py" file using the following command: python main.py
-3. Enter the keyword you want to search for when prompted.
+3. Enter the keyword you want to search for when prompted.  
 Using your keyword, the scraper will search for job postings on the We Work Remotely website and save the data to a CSV file.
 
 ## Contributions
