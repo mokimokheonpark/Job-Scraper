@@ -1,6 +1,16 @@
 # Job-Scraper-Project
 
-This is a Python project for scraping job postings from the We Work Remotely website based on a provided keyword, and saving the data to a CSV file.
+This is a Python project for scraping job postings from job platform websites based on a provided keyword, and saving the data to a CSV file.
+
+## Features
+
+The Project has the following features:
+
+- Scrapes job postings from the We Work Remotely website, which is a popular platform for remote job listings.
+- Allows users to search for job postings based on a specific keyword.
+- Collects relevant job data such as company name, location, job title and job type.
+- Outputs the collected job data to a CSV file for easy analysis and manipulation.
+- Handles exceptions and errors gracefully, informing users when something goes wrong and how to resolve it.
 
 ## Dependencies
 
