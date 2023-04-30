@@ -27,6 +27,13 @@ To use the scraper, follow the steps below:
 The scraper will then search for job postings on the We Work Remotely website that match your keyword,  
 and save the data to a CSV file with the name "{keyword}_jobs_data.csv" in the project directory.
 
+## Improvements
+
+This project can be improved with future updates by:
+
+- Adding support for scraping job postings from other websites, such as Indeed or LinkedIn.
+- Implementing a more advanced filtering system to allow users to narrow down their job search results.
+
 ## Contributions
 
 Contributions to the project are welcome! If you find any issues or have any suggestions for improvement, feel free to create an issue or a pull request.
