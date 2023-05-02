@@ -1,25 +1,38 @@
+from flask import Flask, render_template, request, redirect, send_file
 from extractors.weworkremotely import extract_weworkremotely_jobs
+from file import save_to_file
 
-keyword = input("Please enter your keyword: ")
+app = Flask("Job Scraper")
 
-try:
-    weworkremotely_jobs = extract_weworkremotely_jobs(keyword)
-except Exception as e:
-    print(f"An error occurred while extracting job data: {e}")
-    exit()
+@app.route("/")
+def home():
+    return render_template("home.html")
 
-if not weworkremotely_jobs:
-    print("No job data was found for the given keyword.")
-    exit()
+data_base = {}
 
-keyword = keyword.replace(" ", "_")
+@app.route("/search")
+def search():
+    keyword = request.args.get("keyword")
+    if keyword == None or keyword == "":
+        return redirect("/")
+    keyword = keyword.replace(" ", "_")
+    if keyword in data_base:
+        jobs = data_base[keyword]
+    else:
+        keyword = keyword.replace("_", " ")
+        jobs = extract_weworkremotely_jobs(keyword)
+        keyword = keyword.replace(" ", "_")
+        data_base[keyword] = jobs
+    return render_template("search.html", keyword=keyword, jobs=jobs)
 
-try:
-    with open(f"{keyword}_jobs_data.csv", "w", encoding = "utf-8") as file:
-        file.write("Company, Location, Position, Job Type, URL\n")
-        for job in weworkremotely_jobs:
-            file.write(f"{job['company']}, {job['location']}, {job['position']}, {job['job type']}, {job['url']}\n")
-    print(f"Job data was successfully written to {keyword}_jobs_data.csv.")
-except Exception as e:
-    print(f"An error occurred while writing job data to CSV: {e}")
-    exit()
+@app.route("/export")
+def export():
+    keyword = request.args.get("keyword")
+    if keyword == None or keyword == "":
+        return redirect("/")
+    if keyword not in data_base:
+        return redirect(f"/search?keyword={keyword}")
+    save_to_file(keyword, data_base[keyword])
+    return send_file(f"{keyword}_jobs_data.csv", as_attachment=True)
+
+app.run("0.0.0.0")

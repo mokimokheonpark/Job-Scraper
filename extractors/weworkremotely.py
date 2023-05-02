@@ -35,7 +35,7 @@ def extract_weworkremotely_jobs(keyword):
             job_data = {
                 "url": f"https://weworkremotely.com{url}",
                 "company": company.string.replace(",", " "),
-                "job type": job_type.string.replace(",", " "),
+                "job_type": job_type.string.replace(",", " "),
                 "location": location.string.replace(",", " "),
                 "position": position.string.replace(",", " ")
             }
