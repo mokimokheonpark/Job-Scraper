@@ -1,6 +1,6 @@
 # Job-Scraper-Project
 
-This is a Python project for scraping job postings from job platform websites based on a provided keyword, and saving the data to a CSV file.
+This project is a Python web application that scrapes job postings from job platform websites and allows users to search for job listings by keyword and save the data to a CSV file.
 
 ## Features
 
@@ -9,40 +9,41 @@ The Project has the following features:
 - Scrapes job postings from the We Work Remotely website, which is a popular platform for remote job listings.
 - Allows users to search for job postings based on a specific keyword.
 - Collects relevant job data such as company name, location, job title and job type.
-- Outputs the collected job data to a CSV file for easy analysis and manipulation.
+- Supports users in exporting the collected job data to a CSV file for easy analysis and manipulation.
 - Handles exceptions and errors gracefully, informing users when something goes wrong and how to resolve it.
 
 ## Dependencies
 
-This project requires the following Python libraries:
+This project requires the following Python libraries and framework:
 
-- requests
-- BeautifulSoup
+- Requests: a library that simplifies sending HTTP requests in Python.
+- BeautifulSoup: a library for parsing HTML and XML files to extract relevant data.
+- Flask: a lightweight web framework for building web applications in Python.
 
 ## Installation
 
 To get started with the project, follow the steps below:
 
 1. Clone the repository using the following command: git clone https://github.com/mokimokheonpark/Job-Scraper-Project.git
-2. Install the required libraries using the following command: pip install requests beautifulsoup4
+2. Install the required libraries and framework using the following command: pip install requests beautifulsoup4 flask
 
 ## Usage
 
-To use the scraper, follow the steps below:
+To use the web application, follow the steps below:
 
 1. Navigate to the project directory using the terminal.
-2. Simply run the "main.py" file using the following command: python main.py
-3. Enter the keyword you want to search for when prompted.
-
-The scraper will then search for job postings on the We Work Remotely website that match your keyword,  
-and save the data to a CSV file with the name "{keyword}_jobs_data.csv" in the project directory.
+2. Run the "main.py" file to start the application using the following command: python main.py
+3. Open your web browser and navigate to "http://localhost:5000".
+4. Enter a keyword in the search bar and click "Search" to retrieve job listings.
+5. View the job listings and click "Export to csv file" to download a CSV file containing the job data.
+6. Press CTRL+C in terminal to quit the application.
 
 ## Improvements
 
-This project can be improved with future updates by:
+The following are some potential improvements with future updates for the project:
 
-- Adding support for scraping job postings from other websites, such as Indeed or LinkedIn.
-- Implementing a more advanced filtering system to allow users to narrow down their job search results.
+- Add support for scraping job postings from other websites, such as Indeed or LinkedIn.
+- Implement a more advanced filtering system to allow users to narrow down their job search results.
 
 ## Contributions
 
